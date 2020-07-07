@@ -21,7 +21,7 @@ namespace _2doParcial.UI.Registros
     {
         private Proyectos Proyecto = new Proyectos();
         Tareas tarea;
-
+        public List<ProyectosDetalle> ProyectosDetalles;
         public rProyectos()
         {
             InitializeComponent();
@@ -49,13 +49,14 @@ namespace _2doParcial.UI.Registros
                 Requerimiento = RequerimientoTextBox.Text,
                 TiempoMinutos = int.Parse(TiempoTextBox.Text)
             };
-
-            Cargar();
+            
             Proyecto.ProyectoDetalles.Add(detalle);
+            Cargar();
+            
             TipoTareaComboBox.SelectedIndex = -1;
             RequerimientoTextBox.Clear();
             TiempoTextBox.Clear();
-            RequerimientoTextBox.Focus();
+            //RequerimientoTextBox.Focus();
         }
 
         private void RemoverButton_Click(object sender, RoutedEventArgs e)

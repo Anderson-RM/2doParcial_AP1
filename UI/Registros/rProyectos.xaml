@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2doParcial.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro de Proyectos" Height="650" Width="610">
+        Title="Registro de Proyectos" Height="650" Width="620">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,0,10,0">
             <StackPanel Orientation="Vertical" Height="628">
@@ -59,7 +59,7 @@
                             </StackPanel>
                             
                             <StackPanel Orientation="Horizontal" Margin="-13,5,0,0" Width="558">
-                                <DataGrid x:Name="DetalleDataGrid" Width="558" Height="129">
+                                <DataGrid x:Name="DetalleDataGrid" Width="558" ItemsSource="{Binding ProyectoDetalles}" AutoGenerateColumns="False" Height="129">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="TipoId" Binding="{Binding TipoId}"/>
                                         <DataGridTextColumn Header="Topo Tarea"  Binding="{Binding Tarea.TipoTarea}"/>

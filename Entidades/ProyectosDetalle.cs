@@ -15,8 +15,31 @@ namespace _2doParcial.Entidades
 
         [ForeignKey("TipoId")]
         public Tareas Tarea { get; set; } = new Tareas();
+        /*public int TareaId { get; set; }*/
         public string Requerimiento { get; set; }
         public int TiempoMinutos { get; set; }
+
+
+        /*public ProyectosDetalle() 
+        {
+            Id = 0;
+            ProyectoId = 0;
+            TipoId = 0;
+            Tareasid = 0;
+            Requerimiento = string.Empty;
+            TiempoMinutos = 0;
+
+        }
+
+        public ProyectosDetalle(int id, int proyectoid, int tipoid,int tareaid,string requerimiento,int minutos)
+        {
+            Id = id;
+            ProyectoId = proyectoid;
+            TipoId = tipoid;
+            Tareasid = tareaid;
+            Requerimiento = requerimiento;
+            TiempoMinutos = minutos;
+        }*/
     }
 
 }
