@@ -48,8 +48,9 @@ namespace _2doParcial.BLL
 
             try
             {
-                contexto.Proyectos.Add(proyecto);
-                ok = contexto.SaveChanges() > 0;
+                if (contexto.Proyectos.Add(proyecto) != null)
+                    ok = contexto.SaveChanges() > 0;
+
             }
             catch (Exception)
             {
@@ -70,7 +71,7 @@ namespace _2doParcial.BLL
 
             try
             {
-                contexto.Database.ExecuteSqlRaw($"Delete FROM OrdenesDetalle Where ProyectoId={proyecto.ProyectoId}");
+                contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectosDetalle Where ProyectoId={proyecto.ProyectoId}");
                 foreach (var anterior in proyecto.ProyectoDetalles)
                 {
                     contexto.Entry(anterior).State = EntityState.Added;
@@ -98,7 +99,8 @@ namespace _2doParcial.BLL
 
             try
             {
-                proyectos = contexto.Proyectos.Find(id);
+                proyectos = contexto.Proyectos.Where(p => p.ProyectoId == id).
+                    Include(d => d.ProyectoDetalles).ThenInclude(t => t.Tarea).SingleOrDefault();
             }
             catch (Exception)
             {

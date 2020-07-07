@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MENU PRINCIPAL" Height="400" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
-         
+        <Menu>
+            <MenuItem Header="Registros" FontWeight="Normal" FontSize="16">
+                <MenuItem Header="Registro" Click="MenuItem_Click_r"/>
+            </MenuItem>
+            <MenuItem Header="Consultas" FontSize="16" FontWeight="Normal">
+                <MenuItem Header="Consulta Registro" Click="MenuItem_Click_c"/>
+            </MenuItem>
+            </Menu>
+
+            <StackPanel Orientation="Horizontal" Margin="0,153,0,155">
+                <Label Content="Bienvenidos al Menu Principal" VerticalAlignment="Top" FontWeight="Bold" FontSize="22" Width="329" Height="57" Margin="35,0,0,0"/>
+
+            </StackPanel>
+        
     </Grid>
 </Window>

@@ -13,7 +13,7 @@ namespace _2doParcial.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source= DATA\Proyectos.db");
+            optionsBuilder.UseSqlite(@"Data Source= DATA\ProyectosBD.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

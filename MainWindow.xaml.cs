@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _2doParcial.UI.Consultas;
+using _2doParcial.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +27,16 @@ namespace _2doParcial
             InitializeComponent();
         }
 
+        private void MenuItem_Click_r(object sender, RoutedEventArgs e)
+        {
+            rProyectos rRegistros = new rProyectos();
+            rRegistros.Show();
+        }
+        private void MenuItem_Click_c(object sender, RoutedEventArgs e)
+        {
+            cProyectos consultaRegistro = new cProyectos();
+            consultaRegistro.Show();
+        }        
         
     }
 }

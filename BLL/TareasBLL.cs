@@ -8,7 +8,7 @@ using System.Text;
 
 namespace _2doParcial.BLL
 {
-    class TareasBLL
+    public class TareasBLL
     {
         public static bool Guardar(Tareas tarea)
         {
