@@ -32,12 +32,14 @@ namespace _2doParcial
             rProyectos rRegistros = new rProyectos();
             rRegistros.Show();
         }
+
         private void MenuItem_Click_c(object sender, RoutedEventArgs e)
         {
             cProyectos consultaRegistro = new cProyectos();
             consultaRegistro.Show();
-        }        
-        
+        }
+
+         
     }
 }
 
