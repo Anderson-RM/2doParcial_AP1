@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:_2doParcial"
         mc:Ignorable="d"
         Title="MENU PRINCIPAL" Height="400" Width="400" WindowStartupLocation="CenterScreen">
-    <Grid> 
-        
+    <Grid>
+         
     </Grid>
 </Window>

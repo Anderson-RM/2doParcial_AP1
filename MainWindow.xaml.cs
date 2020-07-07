@@ -23,7 +23,9 @@ namespace _2doParcial
         public MainWindow()
         {
             InitializeComponent();
-        } 
-         
+        }
+
+        
     }
 }
+
