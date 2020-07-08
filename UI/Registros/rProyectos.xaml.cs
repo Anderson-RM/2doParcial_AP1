@@ -35,8 +35,21 @@ namespace _2doParcial.UI.Registros
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            Proyecto = ProyectosBLL.Buscar(int.Parse(ProyectoIdTextBox.Text));
-            Cargar();
+            Proyectos encontrado = ProyectosBLL.Buscar(int.Parse(ProyectoIdTextBox.Text));
+            if (encontrado != null)
+            {
+                Proyecto = encontrado;
+                Cargar();
+                MessageBox.Show("Fue encontrado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("No encontrado.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                Limpiar();
+                
+                ProyectoIdTextBox.Text = "";
+                ProyectoIdTextBox.Focus();
+            }
         }
 
         private void AgregarButton_Click(object sender, RoutedEventArgs e)
@@ -76,14 +89,20 @@ namespace _2doParcial.UI.Registros
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ProyectosBLL.Guardar(Proyecto))
+            //if (ProyectosBLL.Guardar(Proyecto))
             {
-                Limpiar();
-                MessageBox.Show("Se ha guardado.", "Exito.", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
+                if (!Validar())
+                    return;
+                var paso = ProyectosBLL.Guardar(this.Proyecto);
+                if (paso)
+                {
+                    Limpiar();
+                    MessageBox.Show("Se ha guardado.", "Exito.", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
                 MessageBox.Show("No fue posible guardar.", "Error.", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
@@ -118,7 +137,7 @@ namespace _2doParcial.UI.Registros
 
         }
 
-        /*private bool Validar()
+        private bool Validar()
         {
             bool Validado = true;
             if (ProyectoIdTextBox.Text.Length == 0)
@@ -128,6 +147,6 @@ namespace _2doParcial.UI.Registros
             }
 
             return Validado;
-        }*/
+        }
     }
 }
